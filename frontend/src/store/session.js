@@ -22,10 +22,10 @@ const storeCurrentUser = user => {
   else sessionStorage.removeItem("currentUser");
 }
 
-export const login = ({ email, password }) => async dispatch => {
+export const login = ({ credential, password }) => async dispatch => {
   const response = await csrfFetch("/api/session", {
     method: "POST",
-    body: JSON.stringify({ email, password })
+    body: JSON.stringify({ credential, password })
   });
   const data = await response.json();
   storeCurrentUser(data.user);
@@ -51,8 +51,8 @@ export const signup = (user) => async (dispatch) => {
       fname,
       lname,
       zipcode,
-      password
-    })
+      password,
+    }),
   });
   const data = await response.json();
   storeCurrentUser(data.user);
@@ -61,27 +61,28 @@ export const signup = (user) => async (dispatch) => {
 };
 
 export const logout = () => async (dispatch) => {
-  const response = await csrfFetch("/api/session", {
-    method: "DELETE"
-  });
-  storeCurrentUser(null);
-  dispatch(removeCurrentUser());
-  return response;
-};
-
-const initialState = { 
-  user: JSON.parse(sessionStorage.getItem("currentUser"))
-};
-
-const sessionReducer = (state = initialState, action) => {
-  switch (action.type) {
-    case SET_CURRENT_USER:
-      return { ...state, user: action.payload };
-    case REMOVE_CURRENT_USER:
-      return { ...state, user: null };
-    default:
-      return state;
-  }
-};
-
-export default sessionReducer;
+    const response = await csrfFetch("/api/session", {
+      method: "DELETE"
+    });
+    storeCurrentUser(null);
+    dispatch(removeCurrentUser());
+    return response;
+  };
+  
+  const initialState = { 
+    user: JSON.parse(sessionStorage.getItem("currentUser"))
+  };
+  
+  const sessionReducer = (state = initialState, action) => {
+    switch (action.type) {
+      case SET_CURRENT_USER:
+        return { ...state, user: action.payload };
+      case REMOVE_CURRENT_USER:
+        return { ...state, user: null };
+      default:
+        return state;
+    }
+  };
+  
+  export default sessionReducer;
+  
