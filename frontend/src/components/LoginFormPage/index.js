@@ -13,6 +13,11 @@ function LoginFormPage() {
 
   if (sessionUser) return <Redirect to="/" />;
 
+  const demoLogin = (e) => {
+    e.preventDefault();
+    return dispatch(sessionActions.login({ email: 'caffeine@addict.com', password: 'password' }))
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setErrors([]);
@@ -38,27 +43,28 @@ function LoginFormPage() {
         {errors.map(error => <li key={error}>{error}</li>)}
       </ul>
       <label className="form-label">
-        Email
         <input
           className="form-input"
           type="text"
           value={email}
+          placeholder="Email"
           onChange={(e) => setEmail(e.target.value)}
           required
         />
       </label>
       <br></br>
       <label className="form-label">
-        Password
         <input
           className="form-input"
           type="password"
           value={password}
+          placeholder="Password"
           onChange={(e) => setPassword(e.target.value)}
           required
         />
       </label>
       <button className="form-button" type="submit">Log In</button>
+      <button className="form-button" onClick={demoLogin}>Demo User</button>
       </form>
   </div>
   );

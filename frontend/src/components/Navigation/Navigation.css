@@ -1,8 +1,87 @@
-ul {
-    display: flex;
-    justify-content: flex-end;
-  }
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+  padding: 20px;
+  box-shadow: none;
+}
 
-  .nav-right {
-    margin-left: auto;
-  }
+.nav-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  margin-right: 15px;
+}
+
+.search-bar {
+  flex-grow: 1;
+  margin: 0 20px;
+}
+
+.search-bar input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.github-link,
+.linkedin-link {
+  margin-left: 15px;
+}
+
+.github-link a,
+.linkedin-link a {
+  color: #000000;
+  text-decoration: none;
+}
+
+.github-link a:hover,
+.linkedin-link a:hover {
+  text-decoration: underline;
+}
+
+.nav-right {
+  margin-left: auto;
+}
+
+.login {
+  margin-right: 10px;
+  background-color: transparent;
+  border: 1px solid black;
+  padding: 5px 10px;
+  border-radius: 4px;
+  color: #ffffff;
+  text-decoration: none;
+  transition: background-color 0.3s ease; 
+}
+
+.login:hover {
+  background-color: #888888; /* Set background color to a solid gray on hover */
+}
+
+.signup {
+  margin-right: 10px;
+  background-color: #724E2C; 
+  border: none; 
+  padding: 5px 10px;
+  border-radius: 4px;
+  color: #ffffff;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.signup:hover {
+  background-color: #33200e; 
+}
+
+.home-icon {
+  width: 65px; 
+  height: 60px;
+}

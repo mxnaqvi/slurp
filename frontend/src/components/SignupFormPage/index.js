@@ -17,6 +17,11 @@ function SignupFormPage() {
 
   if (sessionUser) return <Redirect to="/" />;
 
+  const demoLogin = (e) => {
+    e.preventDefault();
+    return dispatch(sessionActions.login({ email: 'caffeine@addict.com', password: 'password' }))
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (password === confirmPassword) {
@@ -39,76 +44,75 @@ function SignupFormPage() {
   };
 
   return (
-   <div className="form-container">
-    <form onSubmit={handleSubmit}>
-      <ul>
-        {errors.map(error => <li key={error}>{error}</li>)}
-      </ul>
-      <label className="form-label">
-        Email
-        <input
-          type="text"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-      </label>
-      <br></br>
-      <label className="form-label">
-        First Name
-        <input
-          type="text"
-          value={fname}
-          onChange={(e) => setFname(e.target.value)}
-          required
-        />
-      </label>
-      <br></br>
-     <label className="form-label">
-        Last Name
-        <input
-          type="text"
-          value={lname}
-          onChange={(e) => setLname(e.target.value)}
-          required
-        />
-      </label>
-      <br></br>
-      <label className="form-label">
-        Zipcode
-        <input
-          type="text"
-          value={zipcode}
-          onChange={(e) => setZipcode(e.target.value)}
-          required
-        />
-      </label>
-      <br></br>
-      <label>
-        Password
-        <input
-          className="form-input"
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-      </label>
-      <br></br>
-      <label>
-        Confirm Password
-        <input
-          className="form-input"
-          type="password"
-          value={confirmPassword}
-          onChange={(e) => setConfirmPassword(e.target.value)}
-          required
-        />
-      </label>
-      <br></br>
-      <button type="submit">Sign Up</button>
-    </form>
-  </div>
+    <div className="form-container">
+      <form onSubmit={handleSubmit}>
+        <label className="form-label">
+          <input
+            type="text"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </label>
+        <div className="form-group">
+          <label className="form-label">
+            <input
+              className="form-input"
+              type="text"
+              placeholder="First Name"
+              value={fname}
+              onChange={(e) => setFname(e.target.value)}
+            />
+          </label>
+          <label className="form-label">
+            <input
+              className="form-input"
+              type="text"
+              placeholder="Last Name"
+              value={lname}
+              onChange={(e) => setLname(e.target.value)}
+            />
+          </label>
+        </div>
+        <label className="form-label">
+          <input
+            className="form-input"
+            type="text"
+            value={zipcode}
+            placeholder="Zipcode"
+            onChange={(e) => setZipcode(e.target.value)}
+          />
+        </label>
+        <label>
+          <input
+            className="form-input"
+            type="password"
+            value={password}
+            placeholder="Password"
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </label>
+        <label>
+          <input
+            className="form-input"
+            type="password"
+            value={confirmPassword}
+            placeholder="Confirm Password"
+            onChange={(e) => setConfirmPassword(e.target.value)}
+          />
+        </label>
+        {errors.length > 0 && (
+          <ul className="error-list">
+            {errors.map((error, index) => (
+              <li key={index}>{error}</li>
+            ))}
+          </ul>
+        )}
+        <br />
+        <button type="submit">Sign Up</button>
+        <button onClick={demoLogin}>Demo Login</button>
+      </form>
+    </div>
   );
 }
 
