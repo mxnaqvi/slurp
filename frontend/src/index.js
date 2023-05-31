@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
+import { ModalProvider } from './context/Modal';
 import './index.css';
 import App from './App';
 import configureStore from './store';
@@ -10,7 +11,7 @@ import * as sessionActions from './store/session';
 
 const store = configureStore();
 
-if (process.env.NODE_ENV !== 'production') {
+if (process.env.NODE_ENV !== "production") {
   window.store = store;
   window.csrfFetch = csrfFetch;
   window.sessionActions = sessionActions;
@@ -18,11 +19,14 @@ if (process.env.NODE_ENV !== 'production') {
 
 function Root() {
   return (
-    <Provider store={store}>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </Provider>
+    <ModalProvider>
+      <Provider store={store}>
+        <BrowserRouter>
+          <App />
+          {/* <Carrot /> */}
+        </BrowserRouter>
+      </Provider>
+    </ModalProvider>
   );
 }
 
@@ -35,7 +39,6 @@ const renderApplication = () => {
   );
 }
 
-// Instead of checking sessionStorage.getItem("X-CSRF-Token"), we will directly dispatch restoreSession
 if (
   sessionStorage.getItem("currentUser") === null ||
   sessionStorage.getItem("X-CSRF-Token") === null 
