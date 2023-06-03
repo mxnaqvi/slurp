@@ -9,4 +9,6 @@ class Business < ApplicationRecord
     validates :phone_number, presence: true, length: { is: 10 }
     validates :price_range, presence: true
 
+    has_one_attached :photo
+
 end

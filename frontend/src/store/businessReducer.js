@@ -34,24 +34,14 @@ export const getBusiness = (businessId) => (store) => {
 export const fetchBusinesses = () => async (dispatch) => {
     const response = await fetch('/api/businesses');
     const data = await response.json();
+    console.log(data);
     dispatch(receiveBusinesses(data));
 }
 
 export const fetchBusiness = (businessId) => async (dispatch) => {
     const response = await fetch(`/api/businesses/${businessId}`);
     const data = await response.json();
-    dispatch(receiveBusiness(data));
-}
-
-export const createBusiness = (business) => async (dispatch) => {
-    const response = await fetch('/api/businesses', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(business)
-    });
-    const data = await response.json();
+    console.log(data);
     dispatch(receiveBusiness(data));
 }
 

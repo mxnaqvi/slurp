@@ -1,6 +1,6 @@
 .navbar {
   display: flex;
-  justify-content: space-between;
+  flex-direction: row; /* Changed flex-direction to column */
   align-items: center;
   background-color: transparent;
   padding: 20px;
@@ -59,17 +59,17 @@
   border-radius: 4px;
   color: #ffffff;
   text-decoration: none;
-  transition: background-color 0.3s ease; 
+  transition: background-color 0.3s ease;
 }
 
 .login:hover {
-  background-color: #888888; /* Set background color to a solid gray on hover */
+  background-color: #888888;
 }
 
 .signup {
   margin-right: 10px;
-  background-color: #724E2C; 
-  border: none; 
+  background-color: #724E2C;
+  border: none;
   padding: 5px 10px;
   border-radius: 4px;
   color: #ffffff;
@@ -78,10 +78,14 @@
 }
 
 .signup:hover {
-  background-color: #33200e; 
+  background-color: #33200e;
 }
 
 .home-icon {
-  width: 65px; 
+  width: 65px;
   height: 60px;
+}
+
+.carousel-container {
+  margin-top: 1px; /* Add margin-top to create space between login buttons and carousel */
 }

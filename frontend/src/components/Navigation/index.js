@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import './Navigation.css';
 import homeIcon from '../../assets/home-icon.png'
+import Carousel from '../SplashPage/Carousel';
 
 function Navigation() {
   const sessionUser = useSelector(state => state.session.user);
