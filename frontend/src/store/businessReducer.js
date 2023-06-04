@@ -1,17 +1,17 @@
-export const RECEIEVE_BUSINESS = 'businesses/RECEIVE_BUSINESS';
-export const RECEIEVE_BUSINESSES = 'businesses/RECEIVE_BUSINESSES';
-
-const receiveBusiness = (business) => {
-    return {
-        type: RECEIEVE_BUSINESS,
-        business
-    }
-}
+export const RECEIVE_BUSINESSES = 'businesses/RECEIVE_BUSINESSES';
+export const RECEIVE_BUSINESS = 'businesses/RECEIVE_BUSINESS';
 
 const receiveBusinesses = (businesses) => {
     return {
-        type: RECEIEVE_BUSINESSES,
+        type: RECEIVE_BUSINESSES,
         businesses
+    }
+}
+
+const receiveBusiness = (business) => {
+    return {
+        type: RECEIVE_BUSINESS,
+        business
     }
 }
 
@@ -24,6 +24,7 @@ export const getBusinesses = (store) => {
 }
 
 export const getBusiness = (businessId) => (store) => {
+    debugger
     if (store.businesses) {
         return store.businesses[businessId];
     } else {
@@ -40,18 +41,23 @@ export const fetchBusinesses = () => async (dispatch) => {
 
 export const fetchBusiness = (businessId) => async (dispatch) => {
     const response = await fetch(`/api/businesses/${businessId}`);
+    debugger
     const data = await response.json();
     console.log(data);
     dispatch(receiveBusiness(data));
 }
 
-const businessReducer = (state = {}, action) => {
+const businessReducer = ( state = {}, action ) => {
+    Object.freeze(state);
+    const newState = { ...state };
+
     switch (action.type) {
-        case RECEIEVE_BUSINESS:
-            return { ...state, [action.business.id]: action.business };
-        case RECEIEVE_BUSINESSES:
-            return { ...state, ...action.businesses };
-        default:
+        case RECEIVE_BUSINESSES:
+            return { ...newState, ...action.businesses };
+        case RECEIVE_BUSINESS:
+            newState[action.business.id] = action.business;
+            return newState;
+        default: 
             return state;
     }
 }

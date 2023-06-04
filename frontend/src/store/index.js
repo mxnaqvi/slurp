@@ -1,10 +1,10 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
-import session from './session';
+import sessionReducer from './session';
 import businessReducer from './businessReducer';
 
 export const rootReducer = combineReducers({
-    session,
+    session: sessionReducer,
     businesses: businessReducer
 })
 

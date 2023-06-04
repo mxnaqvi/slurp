@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import './Navigation.css';
-import homeIcon from '../../assets/home-icon.png'
+import homeIcon from '../../assets/logo.png'
 import Carousel from '../SplashPage/Carousel';
 
 function Navigation() {
@@ -26,6 +26,7 @@ function Navigation() {
   }
 
   return (
+    <>
     <nav className="navbar">
       <ul className="nav-links">
         <li>
@@ -51,6 +52,8 @@ function Navigation() {
         <li className="nav-right">{sessionLinks}</li>
       </ul>
     </nav>
+    <Carousel />
+    </>
   );
 }
 

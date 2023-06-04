@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 const BusinessIndexItem = ({ business }) => {
   return (
     <div>
+      <h1> </h1>  
        <h2>
         <Link to={`/businesses/${business.id}`}>{business.name}</Link>
       </h2>

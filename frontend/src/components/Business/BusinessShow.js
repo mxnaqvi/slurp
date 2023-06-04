@@ -7,6 +7,7 @@ const BusinessShow = ({ businessId }) => {
   const business = useSelector(getBusiness(businessId));
 
   useEffect(() => {
+    debugger
     dispatch(fetchBusiness(businessId));
   }, [dispatch, businessId]);
 

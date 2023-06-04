@@ -12,10 +12,11 @@ function App() {
   return (
     <>
       <Navigation />
-      <Carousel />
+      <Route exact path="/" element={<Carousel />}></Route>
         <Switch>
+          {/* <Route exact path="/" element={<Carousel />}></Route> */}
           <Route exact path="/businesses" component={BusinessIndex} />
-          <Route path="/businesses/:id" component={BusinessShow} />
+          <Route path="/businesses/:businessId" component={BusinessShow} />
           <Route exact path="/login" >
             <LoginFormPage />
           </Route>
