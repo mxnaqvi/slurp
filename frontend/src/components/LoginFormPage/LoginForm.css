@@ -1,10 +1,24 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+}
+
+.form-wrapper {
+  margin-right: 100px; /* Adjust the margin-right value to move the image closer or further away */
+}
+
 .form-container {
   width: 300px;
-  margin: 0 auto;
   padding: 20px;
   background: #fff;
   border: 1px solid #ccc;
   border-radius: 4px;
+}
+
+.login-image {
+  width: 400px;
 }
 
 .form-container label {
@@ -34,4 +48,29 @@
 
 .form-container button:hover {
   background: #b91f1f;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.demo-button {
+  margin-right: 5px;
+}
+
+.signup-text {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.signup-link {
+  color: #d32323;
+  text-decoration: none;
+}
+
+.signup-link:hover {
+  text-decoration: underline;
 }

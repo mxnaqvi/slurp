@@ -3,9 +3,9 @@ import './Carousel.css';
 
 const Carousel = () => {
     const images = [
-        "https://wallpaperaccess.com/full/7157523.jpg",
-        "https://wallpapers.com/images/hd/bag-and-cup-of-coffee-01pjkia0sox3a71m.jpg",
-        "https://w0.peakpx.com/wallpaper/801/916/HD-wallpaper-caffe-latte-on-white-ceramic-cup-beside-silver-and-black-laptop-computer.jpg"
+        "https://img.freepik.com/free-photo/coffee-mugs-light-beige-textured-wallpaper_53876-167206.jpg?w=2000",
+        "https://wallpaperaccess.com/full/7157545.jpg",
+        "https://papers.co/wallpaper/papers.co-mv01-heart-coffee-cappuccino-cup-light-table-29-wallpaper.jpg"
     ]
 
     const [currentIndex, setCurrentIndex] = useState(0)
