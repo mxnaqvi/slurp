@@ -37,6 +37,7 @@ function Navigation() {
 
   const shouldDisplayGithubLink = (location.pathname !== '/login' && location.pathname !== '/signup');
   const shouldDisplayLinkedInLink = (location.pathname !== '/login' && location.pathname !== '/signup');
+  const shouldDisplayCafeButton = (location.pathname === '/');
 
   return (
     <div className="navigation-container">
@@ -79,6 +80,13 @@ function Navigation() {
           <li className="nav-right">{sessionLinks}</li>
         </ul>
       </nav>
+      {shouldDisplayCafeButton && (<div className="button-text-container">
+        <p className="button-text">Start Slurpin'</p>
+        <NavLink className="cafes" to="/businesses">
+          Cafes
+        </NavLink>
+      </div>
+    )}
       {shouldDisplayCarousel && (
         <div className="carousel-container">
           <Carousel />

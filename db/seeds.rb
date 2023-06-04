@@ -6,28 +6,41 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.firs
 Business.create!([
-name: "The Cheesecake Factory", 
-address: "1000 Town Center Dr", 
-city: "Orlando", 
-state: "FL", 
-zip_code: "32837", 
-phone_number: "4073513333", 
-price_range: 3.0, 
+name: "Steeplechase Coffee", 
+address: "3013 Fort Hamilton Pkwy", 
+city: "Brooklyn", 
+state: "NY", 
+zip_code: "11218", 
+phone_number: "1234567891", 
+price_range: 1.0, 
 rating: 4.5, 
-latitude: 28.5383, 
-longitude: -81.3792, 
-hours: {"Monday"=>"11:00 am - 10:00 pm", "Tuesday"=>"11:00 am - 10:00 pm", "Wednesday"=>"11:00 am - 10:00 pm", "Thursday"=>"11:00 am - 10:00 pm", "Friday"=>"11:00 am - 11:00 pm", "Saturday"=>"11:00 am - 11:00 pm", "Sunday"=>"11:00 am - 10:00 pm"}
+latitude: 40.618715, 
+longitude: -74.033196, 
+hours: {"Monday"=>"7:30 am - 3:00 pm", "Tuesday"=>"7:30 am - 3:00 pm", "Wednesday"=>"7:30 am - 3:00 pm", "Thursday"=>"7:30 am - 3:00 pm", "Friday"=>"7:30 am - 7:30 pm", "Saturday"=>"7:30 am - 3:00 pm", "Sunday"=>"7:30 am - 3:00 pm"}
 ])
 
-Business.create!([ name: "The Poop Factory", 
-address: "1000 Town Center Dr1", 
-city: "Orlando", 
-state: "FL", 
-zip_code: "32837", 
+Business.create!([ name: "Velvette Black", 
+address: "814 Union St", 
+city: "Brooklyn", 
+state: "NY", 
+zip_code: "11215", 
 phone_number: "4073513333", 
-price_range: 3, 
-rating: 4.5, 
+price_range: 2.0, 
+rating: 5, 
 latitude: 28.5383, 
 longitude: -81.3792, 
-hours: {"Monday"=>"11:00 am - 10:00 pm", "Tuesday"=>"11:00 am - 10:00 pm", "Wednesday"=>"11:00 am - 10:00 pm", "Thursday"=>"11:00 am - 10:00 pm", "Friday"=>"11:00 am - 11:00 pm", "Saturday"=>"11:00 am - 11:00 pm", "Sunday"=>"11:00 am - 10:00 pm"}
+hours: {"Monday"=>"7:00 am - 7:00 pm", "Tuesday"=>"7:00 am - 7:00 pm", "Wednesday"=>"7:00 am - 7:00 pm", "Thursday"=>"7:00 am - 7:00 pm", "Friday"=>"7:00 am - 11:00 pm", "Saturday"=>"7:00 am - 11:00 pm", "Sunday"=>"7:00 am - 7:00 pm"}
+])
+
+Business.create!([ name: "Cafe Madeline", 
+address: "1603 Cortelyou Rd", 
+city: "Brooklyn", 
+state: "NY", 
+zip_code: "11226", 
+phone_number: "4073513333", 
+price_range: 2.0, 
+rating: 3, 
+latitude: 28.5383, 
+longitude: -81.3792, 
+hours: {"Monday"=>"7:00 am - 8:00 pm", "Tuesday"=>"7:00 am - 8:00 pm", "Wednesday"=>"7:00 am - 8:00 pm", "Thursday"=>"7:00 am - 8:00 pm", "Friday"=>"7:00 am - 11:00 pm", "Saturday"=>"7:00 am - 11:00 pm", "Sunday"=>"7:00 am - 8:00 pm"}
 ])

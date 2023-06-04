@@ -1,9 +1,10 @@
 .navbar {
   display: flex;
-  flex-direction: row; /* Changed flex-direction to column */
+  flex-direction: row; 
   align-items: center;
   background-color: transparent;
-  padding: 20px;
+  padding: 5px;
+  width: 100%;
   box-shadow: none;
   z-index: 6;
 }
@@ -83,19 +84,19 @@
 }
 
 .home-icon {
-  width: 100px; /* Adjust the width to the desired size */
-  height: auto; /* Maintain the aspect ratio */
+  width: 100px; 
+  height: auto; 
 }
 
 .github-link a img,
 .linkedin-link a img {
-  width: 26px; /* Adjust the width to the desired size */
-  height: 26px; /* Adjust the height to the desired size */
+  width: 26px; 
+  height: 26px; 
 }
 
 .carousel-container {
   margin-top: 1px;
-  z-index: 5; /* Add margin-top to create space between login buttons and carousel */
+  z-index: 5; 
 }
 .navigation-container {
   position: relative;
@@ -110,3 +111,41 @@
   z-index: -1;
 }
 
+.navigation-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; 
+}
+
+.button-text {
+  color: #ffffff; 
+  font-size: 60px;
+  margin-bottom: 10px;
+  padding: 5px; 
+  font-weight: bold; 
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+}
+
+.button-text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; 
+  margin-top: 200px;
+  margin-left: 100px; 
+}
+
+.cafes {
+  margin-top: 10px;
+  background-color: #724E2C;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 4px;
+  color: #ffffff;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  align-self: flex-start;
+}
+
+.cafes:hover {
+  background-color: #33200e;
+}

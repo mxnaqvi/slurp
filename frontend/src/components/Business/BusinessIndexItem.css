@@ -1,0 +1,24 @@
+/* BusinessIndexItem.css */
+
+.business-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .business-image {
+    margin-right: 20px;
+  }
+  
+  .business-image img {
+    display: block;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  .business-details {
+    flex: 1;
+  }
+  

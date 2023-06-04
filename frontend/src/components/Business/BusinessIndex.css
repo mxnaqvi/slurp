@@ -1,0 +1,70 @@
+/* BusinessIndex.css */
+
+/* Container for the entire BusinessIndex component */
+.business-index-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Styles for each individual business item */
+  .business-item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .business-item h2 {
+    margin-bottom: 10px;
+  }
+  
+  .business-item p {
+    margin-bottom: 5px;
+  }
+  
+  .business-item a {
+    color: #333;
+    text-decoration: none;
+  }
+  
+  .business-item a:hover {
+    text-decoration: underline;
+  }
+  
+  .business-item .address {
+    font-weight: bold;
+  }
+  
+  .business-item .rating {
+    color: #f8c741;
+    font-weight: bold;
+  }
+  
+  .business-item .price-range {
+    font-weight: bold;
+  }
+  
+  .business-item .phone-number {
+    font-weight: bold;
+  }
+  
+  /* Styling for the BusinessIndex header */
+  .business-header {
+    margin-bottom: 20px;
+  }
+  
+  .business-header h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .business-header p {
+    font-size: 14px;
+    color: #666;
+  }
+  
