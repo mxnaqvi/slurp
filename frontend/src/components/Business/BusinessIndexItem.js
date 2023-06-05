@@ -25,10 +25,10 @@ const BusinessIndexItem = ({ business }) => {
         <p className="address">Address: {business.address}</p>
         <p>City: {business.city}</p>
         <p>State: {business.state}</p>
-        <p>Zip Code: {business.zip_code}</p>
+        <p>Zip Code: {business.zipCode}</p>
         <p>Rating: {generateStarRating(business.rating)}</p>
-        <p>Phone Number: {business.phone_number}</p>
-        <p>Price Range: {business.price_range}</p>
+        <p>Phone Number: {business.phoneNumber}</p>
+        <p>Price Range: {business.priceRange}</p>
       </div>
     </div>
   );

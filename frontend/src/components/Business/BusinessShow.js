@@ -1,13 +1,15 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
 import { fetchBusiness, getBusiness } from '../../store/businessReducer';
 
-const BusinessShow = ({ businessId }) => {
+const BusinessShow = () => {
   const dispatch = useDispatch();
+  const {businessId} = useParams();
   const business = useSelector(getBusiness(businessId));
 
   useEffect(() => {
-    debugger
+    // debugger
     dispatch(fetchBusiness(businessId));
   }, [dispatch, businessId]);
 
@@ -21,9 +23,9 @@ const BusinessShow = ({ businessId }) => {
       <p>Address: {business.address}</p>
       <p>City: {business.city}</p>
       <p>State: {business.state}</p>
-      <p>Zip Code: {business.zip_code}</p>
-      <p>Phone Number: {business.phone_number}</p>
-      <p>Price Range: {business.price_range}</p>
+      <p>Zip Code: {business.zipCode}</p>
+      <p>Phone Number: {business.phoneNumber}</p>
+      <p>Price Range: {business.priceRange}</p>
       <p>Rating: {business.rating}</p>
       <p>Latitude: {business.latitude}</p>
       <p>Longitude: {business.longitude}</p>
