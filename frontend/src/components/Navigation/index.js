@@ -3,7 +3,7 @@ import { NavLink, useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import './Navigation.css';
-import homeIcon from '../../assets/logo.png';
+import homeIcon from '../../assets/homeicon.png';
 import githubIcon from '../../assets/github-mark.png';
 import linkedinIcon from '../../assets/LI-In-Bug.png';
 import Carousel from '../SplashPage/Carousel';
@@ -83,7 +83,7 @@ function Navigation() {
       {shouldDisplayCafeButton && (<div className="button-text-container">
         <p className="button-text">Start Slurpin'</p>
         <NavLink className="cafes" to="/businesses">
-          Cafes
+          Find Cafes
         </NavLink>
       </div>
     )}
