@@ -45,6 +45,7 @@ export const fetchReviews = () => async (dispatch) => {
 export const fetchReview = (reviewId) => async (dispatch) => {
     const response = await csrfFetch(`/api/reviews/${reviewId}`);
     const review = await response.json();
+    console.log(review);
     dispatch(recieveReview(review));
 }
 
@@ -57,6 +58,7 @@ export const createReview = (reviewObj, businessId, history) => async (dispatch)
         body: JSON.stringify(reviewObj)
     });
     const newReview = await response.json();
+    console.log(newReview);
     dispatch(recieveReview(newReview));
     history.push(`/businesses/${businessId}`);
     return response
