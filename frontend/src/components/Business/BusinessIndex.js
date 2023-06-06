@@ -14,15 +14,21 @@ const BusinessIndex = () => {
 
   return (
     <div className="business-index-container">
-      <div className="business-header">
-        <h1>Businesses</h1>
-        <p>Showing {businesses.length} results</p>
-      </div>
-      {businesses.map((business) => (
-        <div className="business-item" key={business.id}>
-          <BusinessIndexItem business={business} />
+      <div className="business-list">
+        <div className="business-header">
+          <h1>Businesses</h1>
+          <p>Showing {businesses.length} results</p>
         </div>
-      ))}
+        {businesses.map((business) => (
+          <div className="business-item" key={business.id}>
+            <BusinessIndexItem business={business} />
+          </div>
+        ))}
+      </div>
+      <div className="business-map">
+        {/* Add the map component or placeholder here */}
+        <p>Map Placeholder</p>
+      </div>
     </div>
   );
 };

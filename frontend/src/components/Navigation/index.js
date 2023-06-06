@@ -33,8 +33,7 @@ function Navigation() {
   }
 
   const shouldDisplayCarousel = location.pathname === '/';
-  const shouldDisplaySearchBar = shouldDisplayCarousel;
-
+  const shouldDisplaySearchBar = (location.pathname !== '/login' && location.pathname !== '/signup');
   const shouldDisplayGithubLink = (location.pathname !== '/login' && location.pathname !== '/signup');
   const shouldDisplayLinkedInLink = (location.pathname !== '/login' && location.pathname !== '/signup');
   const shouldDisplayCafeButton = (location.pathname === '/');

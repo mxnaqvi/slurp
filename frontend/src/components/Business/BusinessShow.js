@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { fetchBusiness, getBusiness } from '../../store/businessReducer';
+import BusinessShowHeader from './BusinessShowHeader';
 
 const BusinessShow = () => {
   const dispatch = useDispatch();
@@ -9,7 +10,6 @@ const BusinessShow = () => {
   const business = useSelector(getBusiness(businessId));
 
   useEffect(() => {
-    // debugger
     dispatch(fetchBusiness(businessId));
   }, [dispatch, businessId]);
 
@@ -18,6 +18,8 @@ const BusinessShow = () => {
   }
 
   return (
+    <>
+    <BusinessShowHeader />
     <div>
       <h1>{business.name}</h1>
       <p>Address: {business.address}</p>
@@ -31,6 +33,7 @@ const BusinessShow = () => {
       <p>Longitude: {business.longitude}</p>
       <p>Hours: {JSON.stringify(business.hours)}</p>
     </div>
+    </>
   );
 };
 

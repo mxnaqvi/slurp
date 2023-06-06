@@ -1,0 +1,59 @@
+/* BusinessShowHeader.css */
+
+#show-page-header-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+ 
+  background-color: #fff;
+
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+}
+
+#show-page-header-image {
+  margin-right: 20px;
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  height: 450px; /* Adjust height to 450px */
+  overflow: hidden; /* Hide overflowing image */
+}
+
+#show-page-header-details {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 2;
+  flex-grow: 1;
+}
+
+#show-page-header-title {
+  color: white;
+  font-size: 48px;
+  text-shadow: 1px 1px 2px black;
+}
+
+#show-page-header-details h1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+#show-page-header-rating p {
+  font-size: 20px;
+  margin: 0;
+  color: #f15c00;
+}
+
+#show-page-header-price p {
+  font-size: 18px;
+  margin: 0;
+  color: white
+}
+
+#show-page-header-image img {
+  width: 100%;
+  height: 100%; /* Adjust height to 100% */
+  object-fit: cover;
+  border-radius: 8px;
+}

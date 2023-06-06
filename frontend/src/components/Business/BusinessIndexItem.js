@@ -13,6 +13,19 @@ const BusinessIndexItem = ({ business }) => {
     return fullStars + halfStar + emptyStars;
   };
 
+  const priceDollars = () => {
+    switch (business.priceRange) {
+        case 1: 
+            return '$';
+        case 2:
+            return '$$';
+        case 3:
+            return '$$$';
+        case 4: 
+            return '$$$$';
+    };
+};
+
   return (
     <div className="business-item">
       <div className="business-image">
@@ -28,7 +41,7 @@ const BusinessIndexItem = ({ business }) => {
         <p>Zip Code: {business.zipCode}</p>
         <p>Rating: {generateStarRating(business.rating)}</p>
         <p>Phone Number: {business.phoneNumber}</p>
-        <p>Price Range: {business.priceRange}</p>
+        <p>Price Range: {priceDollars(business.priceRange)}</p>
       </div>
     </div>
   );

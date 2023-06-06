@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id              :bigint           not null, primary key
+#  password_digest :string           not null
+#  session_token   :string           not null
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  fname           :string           not null
+#  lname           :string           not null
+#  email           :string           not null
+#  zipcode         :string           not null
+#
 class User < ApplicationRecord
 
     validates :zipcode,
@@ -14,12 +28,17 @@ class User < ApplicationRecord
         format: { with: URI::MailTo::EMAIL_REGEXP }
 
     has_secure_password
+
+    has_many :reviews,
+        primary_key: :id,
+        foreign_key: :user_id,
+        class_name: :Review,
+        dependent: :destroy
+
     before_validation :ensure_session_token
 
-        def self.find_by_credentials(email, password)
-            # debugger
+    def self.find_by_credentials(email, password)    
         user = User.find_by(email: email)
-    #    debugger
         if user&.authenticate(password) 
             return user
         else

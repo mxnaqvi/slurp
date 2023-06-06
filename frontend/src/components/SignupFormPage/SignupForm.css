@@ -38,7 +38,7 @@
 .form-container button {
   width: 100%;
   padding: 10px;
-  background: #d32323;
+  background: #724E2C;
   color: #fff;
   border: none;
   border-radius: 4px;
@@ -46,13 +46,18 @@
 }
 
 .form-container button:hover {
-  background: #b91f1f;
+  background: #33200e;
 }
 
 .form-group {
   display: flex;
   gap: 10px;
   margin-bottom: 10px;
+}
+
+.login-link-text {
+  color: #724E2C;
+  text-decoration: none;
 }
 
 .error-list {
