@@ -33,13 +33,11 @@ class Business < ApplicationRecord
     has_many :reviews,
         primary_key: :id,
         foreign_key: :business_id,
-        class_name: :Review,
-        dependent: :destroy
+        class_name: :Review
     
     has_many :reviewers,
         through: :reviews,
         source: :reviewer
-        dependent: :destroy
 
     def update_rating
         count = reviewers.count

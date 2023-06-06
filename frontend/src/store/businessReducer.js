@@ -24,8 +24,8 @@ export const getBusinesses = (store) => {
 }
 
 export const getBusiness = (businessId) => (store) => {
-    console.log(businessId)
-    // debugger
+
+   
     if (store.businesses) {
         return store.businesses[businessId];
     } else {
@@ -36,15 +36,12 @@ export const getBusiness = (businessId) => (store) => {
 export const fetchBusinesses = () => async (dispatch) => {
     const response = await fetch('/api/businesses');
     const data = await response.json();
-    console.log(data);
     dispatch(receiveBusinesses(data));
 }
 
 export const fetchBusiness = (businessId) => async (dispatch) => {
     const response = await fetch(`/api/businesses/${businessId}`);
-    // debugger
     const data = await response.json();
-    console.log(data);
     dispatch(receiveBusiness(data));
 }
 

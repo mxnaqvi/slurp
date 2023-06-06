@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
     def show
         @user = current_user
         if @user
-            debugger
+            
             render 'api/users/show'
         else
             render json: { user: nil }

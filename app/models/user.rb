@@ -32,8 +32,7 @@ class User < ApplicationRecord
     has_many :reviews,
         primary_key: :id,
         foreign_key: :user_id,
-        class_name: :Review,
-        dependent: :destroy
+        class_name: :Review
 
     before_validation :ensure_session_token
 

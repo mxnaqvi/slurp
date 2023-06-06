@@ -15,9 +15,8 @@ class API::ReviewsController < ApplicationController
         @review = Review.new(review_params)
         @review.user_id = current_user.id
         @review.business_id = params[:business_id]
-        if @review.save
-            @review.business.update_rating
-            redirect_to api_business_url(@review.business_id)
+        if @review.save!
+            
         else
             render json: @review.errors.full_messages, status: 422
         end
@@ -26,8 +25,7 @@ class API::ReviewsController < ApplicationController
     def update
         @review = Review.find(params[:id])
         if @review && @review.update(review_params)
-            @review.business.update_rating
-            redirect_to api_business_url(@review.business_id)
+            
         else
             render json: @review.errors.full_messages, status: 422
         end
