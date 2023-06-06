@@ -1,6 +1,6 @@
 class API::ReviewsController < ApplicationController
     before_action :require_logged_in, only: [:create, :update, :destroy]
-    
+
     def index
         @reviews = Review.all
         render :index
@@ -12,7 +12,7 @@ class API::ReviewsController < ApplicationController
     end
 
     def create
-        @review - Review.new(review_params)
+        @review = Review.new(review_params)
         @review.user_id = current_user.id
         @review.business_id = params[:business_id]
         if @review.save
@@ -35,7 +35,7 @@ class API::ReviewsController < ApplicationController
 
     def destroy
         @review = Review.find(params[:id])
-        if @review && @review.reviewer_id == current_user.id
+        if @review && @review.user_id == current_user.id
             @review.destroy
         end
     end
