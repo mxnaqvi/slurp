@@ -6,6 +6,7 @@ import BusinessShowHeader from './BusinessShowHeader';
 import Reviews from '../Reviews/ReviewIndex';
 import { Redirect } from 'react-router-dom/cjs/react-router-dom.min';
 import { fetchReviews, getReviews } from '../../store/reviewReducer';
+import './BusinessShow.css';
 
 const BusinessShow = () => {
   const dispatch = useDispatch();
@@ -36,7 +37,6 @@ const BusinessShow = () => {
   return (
     <>
       <BusinessShowHeader />
-      {/* {console.log(reviews)} */}
       <div>
         <h1>{business.name}</h1>
         <p>Address: {business.address}</p>
