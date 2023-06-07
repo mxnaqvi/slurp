@@ -20,16 +20,16 @@ export const removeReview = (reviewId) => ({
 });
 
 export const getReviews = (state) => {
-    if (state.reviews) {
-        return Object.values(state.reviews);
+    if (state.review) {
+        return Object.values(state.review);
     } else {
         return [];
     }
 }
 
 export const getReview = (state, reviewId) => {
-    if (state.reviews) {
-        return state.reviews[reviewId];
+    if (state.review) {
+        return state.review[reviewId];
     } else {    
         return null;
     }
@@ -88,7 +88,6 @@ const reviewReducer = (state = {}, action) => {
         case RECIEVE_REVIEWS:
             return {...state, ...action.reviews};
         case RECIEVE_REVIEW:
-            debugger
             newState[action.review.id] = action.review;
             return newState;
         case REMOVE_REVIEW:

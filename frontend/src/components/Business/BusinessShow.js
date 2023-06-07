@@ -26,6 +26,8 @@ const BusinessShow = () => {
     return null;
   }
 
+  const filteredReviews = reviews.filter(review => review.businessId === businessId);
+
   const handleReviewForm = (event) => {
     event.preventDefault();
     history.push(`/businesses/${businessId}/write-a-review`);
@@ -34,6 +36,7 @@ const BusinessShow = () => {
   return (
     <>
       <BusinessShowHeader />
+      {/* {console.log(reviews)} */}
       <div>
         <h1>{business.name}</h1>
         <p>Address: {business.address}</p>
@@ -48,7 +51,8 @@ const BusinessShow = () => {
         <p>Hours: {JSON.stringify(business.hours)}</p>
 
         <div className='reviews-container'>
-          <Reviews />
+          {/* <Reviews /> */}
+          {console.log(filteredReviews)}
         </div>
 
         <button onClick={handleReviewForm}>Write a Review</button> {/* Add the button with the onClick event */}
