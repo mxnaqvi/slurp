@@ -52,7 +52,6 @@
 .form-group {
   display: flex;
   gap: 10px;
-  margin-bottom: 10px;
 }
 
 .login-link-text {
@@ -69,4 +68,9 @@
 
 .signup-button {
   margin-bottom: 10px; /* Add margin between the buttons */
+}
+
+.form-input-group {
+  display: flex;
+  gap: 10px;
 }

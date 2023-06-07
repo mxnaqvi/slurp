@@ -57,24 +57,24 @@ function SignupFormPage() {
             />
           </label>
           <div className="form-group">
-            <label className="form-label">
-              <input
-                className="form-input"
-                type="text"
-                placeholder="First Name"
-                value={fname}
-                onChange={(e) => setFname(e.target.value)}
-              />
-            </label>
-            <label className="form-label">
-              <input
-                className="form-input"
-                type="text"
-                placeholder="Last Name"
-                value={lname}
-                onChange={(e) => setLname(e.target.value)}
-              />
-            </label>
+          <label className="form-label">
+          <div className="form-input-group">
+            <input
+              className="form-input"
+              type="text"
+              placeholder="First Name"
+              value={fname}
+              onChange={(e) => setFname(e.target.value)}
+            />
+            <input
+              className="form-input"
+              type="text"
+              placeholder="Last Name"
+              value={lname}
+              onChange={(e) => setLname(e.target.value)}
+            />
+          </div>
+        </label>
           </div>
           <label className="form-label">
             <input

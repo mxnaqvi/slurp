@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, useLocation } from "react-router-dom";
 import LoginFormPage from "./components/LoginFormPage";
 import Navigation from "./components/Navigation";
 import SignupFormPage from "./components/SignupFormPage";
@@ -12,6 +12,8 @@ import RecentActivity from "./components/Reviews/RecentActivity";
 
 
 function App() {
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
   return (
     <>
       <Navigation />
@@ -31,7 +33,7 @@ function App() {
             <UpdateFormPage />
           </Route>
         </Switch>
-        <RecentActivity />
+        {isHomePage && <RecentActivity />}
       <Footer />
     </>
   );
