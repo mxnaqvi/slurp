@@ -6,6 +6,7 @@ import SignupFormPage from "./components/SignupFormPage";
 import BusinessIndex from "./components/Business/BusinessIndex";
 import BusinessShow from "./components/Business/BusinessShow";
 import ReviewFormPage from "./components/Reviews/ReviewForm";
+import UpdateFormPage from "./components/Reviews/UpdateForm";
 function App() {
   return (
     <>
@@ -21,6 +22,9 @@ function App() {
           </Route>
           <Route exact path="/businesses/:businessId/write-a-review">
             <ReviewFormPage />
+          </Route>
+          <Route exact path="/businesses/:businessId/update-review/:reviewId">
+            <UpdateFormPage />
           </Route>
         </Switch>
     </>
