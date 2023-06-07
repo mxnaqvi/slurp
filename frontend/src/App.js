@@ -7,6 +7,7 @@ import BusinessIndex from "./components/Business/BusinessIndex";
 import BusinessShow from "./components/Business/BusinessShow";
 import ReviewFormPage from "./components/Reviews/ReviewForm";
 import UpdateFormPage from "./components/Reviews/UpdateForm";
+import Footer from "./components/Footer/Footer";
 function App() {
   return (
     <>
@@ -27,6 +28,7 @@ function App() {
             <UpdateFormPage />
           </Route>
         </Switch>
+      <Footer />
     </>
   );
 }

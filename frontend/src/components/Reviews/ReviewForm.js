@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
-import { useDispatch  } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { createReview } from '../../store/reviewReducer';
 import { useHistory, useParams } from 'react-router-dom';
+import './ReviewFormPage.css';
+import StarRating from './StarRating'; // Replace 'StarRating' with the appropriate star rating component
 
 const ReviewFormPage = () => {
   const history = useHistory();
   const dispatch = useDispatch();
   const [body, setBody] = useState('');
-  const [rating, setRating] = useState('');
+  const [rating, setRating] = useState(0); // Initialize rating as 0
   const { businessId } = useParams();
 
   const handleSubmit = async (e) => {
@@ -15,36 +17,30 @@ const ReviewFormPage = () => {
     const reviewObj = {
       body,
       rating,
-      business_id: businessId
-      
+      business_id: businessId,
     };
     await dispatch(createReview(reviewObj, businessId, history));
   };
 
   return (
-    <div>
-      <h1>Write a Review</h1>
+    <div className="review-form-container">
+      <h1 className="review-form-header">Write a Review</h1>
       <form onSubmit={handleSubmit}>
-        <label>
-          Body:
+        <div className="form-group">
+          <div className="form-group">
+            <label className="form-label">Rating</label>
+            <StarRating rating={rating} setRating={setRating} /> {/* Render the star rating component */}
+          </div>
+          <label className="form-label">Your Review</label>
           <textarea
+            className="review-form-textarea"
             value={body}
             onChange={(e) => setBody(e.target.value)}
+            placeholder="Write your review here"
             required
           />
-        </label>
-        <label>
-          Rating:
-          <input
-            type="number"
-            min="1"
-            max="5"
-            value={rating}
-            onChange={(e) => setRating(e.target.value)}
-            required
-          />
-        </label>
-        <button type="submit">Submit Review</button>
+        </div>
+        <button type="submit" className="submit-button">Submit Review</button>
       </form>
     </div>
   );

@@ -1,0 +1,8 @@
+.coffee-rating i {
+    margin-right: 5px;
+    color: #724E2C;
+  }
+  
+  .coffee-rating .empty {
+    color: #ccc;
+  }
