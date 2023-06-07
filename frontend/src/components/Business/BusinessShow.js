@@ -59,11 +59,11 @@ const BusinessShow = () => {
   const formatHours = (hours) => {
     const days = Object.keys(hours);
     let formattedHours = [];
-  
+
     days.forEach((day) => {
       const timeRange = hours[day];
       const formattedTimeRange = timeRange.replace(" - ", " – "); // Replace the dash with an en dash
-  
+
       formattedHours.push(
         <React.Fragment key={day}>
           <strong>{day.charAt(0).toUpperCase() + day.slice(1)}:</strong> {formattedTimeRange}
@@ -71,20 +71,21 @@ const BusinessShow = () => {
         </React.Fragment>
       );
     });
-  
+
     return formattedHours;
   };
-  
+
 
   return (
     <>
       <BusinessShowHeader />
-      <div className='business-write-review'>
-        <button onClick={handleReviewForm}>{buttonText}</button>
-      </div>
       <div className='business-show-container'>
         <div className='business-left-side'>
-        <h1 className="business-show-location-header">Location & Hours</h1>
+        <div className='business-write-review'>
+          <button onClick={handleReviewForm} className='review-button'>{buttonText}</button>
+        </div>
+        <hr></hr>
+          <h1 className="business-show-location-header">Location & Hours</h1>
           <div className='business-show-location-and-hours'>
             <div className='business-show-location-left'>
               <div className='business-show-map'>
@@ -92,13 +93,15 @@ const BusinessShow = () => {
               </div>
               <div className='business-show-address'>
                 <p>{business.address}</p>
-                <p>{business.city}, {business.state} {business.zipCode}</p>
+                <p>{business.city}, {business.state}</p>
+                <p>{business.zipCode}</p>
               </div>
             </div>
             <div className='business-show-hours'>
               <p>{formatHours(business.hours)}</p>
             </div>
           </div>
+          <hr></hr>
           <div className='reviews-container'>
             <Reviews />
           </div>
@@ -117,4 +120,3 @@ const BusinessShow = () => {
 };
 
 export default BusinessShow;
-

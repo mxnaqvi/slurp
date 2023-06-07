@@ -22,3 +22,8 @@
     flex: 1;
   }
   
+  .business-name-index h1 {
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 5px
+  }

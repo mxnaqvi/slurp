@@ -32,13 +32,9 @@ const BusinessIndexItem = ({ business }) => {
         <img src={placeholderImage} alt="Business" width="150" height="150" />
       </div>
       <div className="business-details">
-        <h2>
+        <h1 className='business-name-index'>
           <Link to={`/businesses/${business.id}`}>{business.name}</Link>
-        </h2>
-        <p className="address">Address: {business.address}</p>
-        <p>City: {business.city}</p>
-        <p>State: {business.state}</p>
-        <p>Zip Code: {business.zipCode}</p>
+        </h1>
         <p>Rating: {generateStarRating(business.rating)}</p>
         <p>Phone Number: {business.phoneNumber}</p>
         <p>Price Range: {priceDollars(business.priceRange)}</p>
