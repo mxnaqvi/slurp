@@ -8,6 +8,9 @@ import BusinessShow from "./components/Business/BusinessShow";
 import ReviewFormPage from "./components/Reviews/ReviewForm";
 import UpdateFormPage from "./components/Reviews/UpdateForm";
 import Footer from "./components/Footer/Footer";
+import RecentActivity from "./components/Reviews/RecentActivity";
+
+
 function App() {
   return (
     <>
@@ -28,6 +31,7 @@ function App() {
             <UpdateFormPage />
           </Route>
         </Switch>
+        <RecentActivity />
       <Footer />
     </>
   );
