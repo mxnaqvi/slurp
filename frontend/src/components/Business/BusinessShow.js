@@ -1,12 +1,15 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 import { fetchBusiness, getBusiness } from '../../store/businessReducer';
 import BusinessShowHeader from './BusinessShowHeader';
+import Reviews from '../Reviews/Review';
+import { Redirect } from 'react-router-dom/cjs/react-router-dom.min';
 
 const BusinessShow = () => {
   const dispatch = useDispatch();
-  const {businessId} = useParams();
+  const history = useHistory();
+  const { businessId } = useParams();
   const business = useSelector(getBusiness(businessId));
 
   useEffect(() => {
@@ -14,25 +17,36 @@ const BusinessShow = () => {
   }, [dispatch, businessId]);
 
   if (!business) {
-    return null
+    return null;
   }
+
+  const handleReviewForm = (event) => {
+    event.preventDefault();
+    history.push(`/businesses/${businessId}/write-a-review`);
+  };
 
   return (
     <>
-    <BusinessShowHeader />
-    <div>
-      <h1>{business.name}</h1>
-      <p>Address: {business.address}</p>
-      <p>City: {business.city}</p>
-      <p>State: {business.state}</p>
-      <p>Zip Code: {business.zipCode}</p>
-      <p>Phone Number: {business.phoneNumber}</p>
-      <p>Price Range: {business.priceRange}</p>
-      <p>Rating: {business.rating}</p>
-      <p>Latitude: {business.latitude}</p>
-      <p>Longitude: {business.longitude}</p>
-      <p>Hours: {JSON.stringify(business.hours)}</p>
-    </div>
+      <BusinessShowHeader />
+      <div>
+        <h1>{business.name}</h1>
+        <p>Address: {business.address}</p>
+        <p>City: {business.city}</p>
+        <p>State: {business.state}</p>
+        <p>Zip Code: {business.zipCode}</p>
+        <p>Phone Number: {business.phoneNumber}</p>
+        <p>Price Range: {business.priceRange}</p>
+        <p>Rating: {business.rating}</p>
+        <p>Latitude: {business.latitude}</p>
+        <p>Longitude: {business.longitude}</p>
+        <p>Hours: {JSON.stringify(business.hours)}</p>
+
+        <div className='reviews-container'>
+          <Reviews />
+        </div>
+
+        <button onClick={handleReviewForm}>Write a Review</button> {/* Add the button with the onClick event */}
+      </div>
     </>
   );
 };
