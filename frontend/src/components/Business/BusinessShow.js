@@ -3,20 +3,26 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams, useHistory } from 'react-router-dom';
 import { fetchBusiness, getBusiness } from '../../store/businessReducer';
 import BusinessShowHeader from './BusinessShowHeader';
-import Reviews from '../Reviews/Review';
+import Reviews from '../Reviews/ReviewIndex';
 import { Redirect } from 'react-router-dom/cjs/react-router-dom.min';
+import { fetchReviews, getReviews } from '../../store/reviewReducer';
 
 const BusinessShow = () => {
   const dispatch = useDispatch();
   const history = useHistory();
   const { businessId } = useParams();
   const business = useSelector(getBusiness(businessId));
+  const reviews = useSelector(getReviews);
 
   useEffect(() => {
     dispatch(fetchBusiness(businessId));
   }, [dispatch, businessId]);
 
-  if (!business) {
+  useEffect(() => {
+    dispatch(fetchReviews(businessId));
+  }, [dispatch, businessId]);
+
+  if (!business || !reviews) {
     return null;
   }
 

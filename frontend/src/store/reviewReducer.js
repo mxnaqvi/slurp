@@ -38,14 +38,12 @@ export const getReview = (state, reviewId) => {
 export const fetchReviews = () => async (dispatch) => {
     const response = await csrfFetch('/api/reviews');
     const reviews = await response.json();
-    console.log(reviews);
     dispatch(recieveReviews(reviews));
 }
 
 export const fetchReview = (reviewId) => async (dispatch) => {
     const response = await csrfFetch(`/api/reviews/${reviewId}`);
     const review = await response.json();
-    console.log(review);
     dispatch(recieveReview(review));
 }
 
@@ -58,7 +56,6 @@ export const createReview = (reviewObj, businessId, history) => async (dispatch)
         body: JSON.stringify(reviewObj)
     });
     const newReview = await response.json();
-    console.log(newReview);
     dispatch(recieveReview(newReview));
     history.push(`/businesses/${businessId}`);
     return response
@@ -91,6 +88,7 @@ const reviewReducer = (state = {}, action) => {
         case RECIEVE_REVIEWS:
             return {...state, ...action.reviews};
         case RECIEVE_REVIEW:
+            debugger
             newState[action.review.id] = action.review;
             return newState;
         case REMOVE_REVIEW:
