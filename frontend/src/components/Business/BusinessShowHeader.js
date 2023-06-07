@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchBusiness, getBusiness } from "../../store/businessReducer";
 import { useParams } from 'react-router-dom';
 import './BusinessShowHeader.css';
-const placeholderImage = 'https://res.cloudinary.com/traveltripperweb/image/upload/c_fit,h_1200,w_1200/v1568926602/s8kjihkxpus2buax6zn0.jpg';
+const placeholderImage = 'https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1178&q=80';
 
 const BusinessShowHeader = () => { 
     const dispatch = useDispatch();
@@ -47,7 +47,7 @@ const BusinessShowHeader = () => {
             </div>
             <div id='show-page-header-details'>
                 <div id='show-page-header-title'>
-                    <h1>{business.name}</h1>
+                    <h1 className="business-header-name">{business.name}</h1>
                 </div>
                         <div id='show-page-header-rating'>
                             <p>{generateStarRating(business.rating)}</p>
