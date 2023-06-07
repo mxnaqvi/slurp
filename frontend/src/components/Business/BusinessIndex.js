@@ -27,7 +27,7 @@ const BusinessIndex = () => {
       </div>
       <div className="business-map">
         {/* Add the map component or placeholder here */}
-        <p>Map Placeholder</p>
+        <p>this is the map just trust me its here</p>
       </div>
     </div>
   );

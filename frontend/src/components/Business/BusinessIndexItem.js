@@ -15,16 +15,18 @@ const BusinessIndexItem = ({ business }) => {
 
   const priceDollars = () => {
     switch (business.priceRange) {
-        case 1: 
-            return '$';
-        case 2:
-            return '$$';
-        case 3:
-            return '$$$';
-        case 4: 
-            return '$$$$';
-    };
-};
+      case 1:
+        return '$';
+      case 2:
+        return '$$';
+      case 3:
+        return '$$$';
+      case 4:
+        return '$$$$';
+      default:
+        return '';
+    }
+  };
 
   return (
     <div className="business-item">
@@ -32,12 +34,13 @@ const BusinessIndexItem = ({ business }) => {
         <img src={placeholderImage} alt="Business" width="150" height="150" />
       </div>
       <div className="business-details">
-        <h1 className='business-name-index'>
-          <Link to={`/businesses/${business.id}`}>{business.name}</Link>
+        <h1 className="business-name-index">
+          <Link to={`/businesses/${business.id}`} style={{ fontSize: '30px', fontWeight: '800' }}>
+            {business.name}
+          </Link>
         </h1>
-        <p>Rating: {generateStarRating(business.rating)}</p>
-        <p>Phone Number: {business.phoneNumber}</p>
-        <p>Price Range: {priceDollars(business.priceRange)}</p>
+        <p style={{ fontSize: '29px' }}>{generateStarRating(business.rating)}</p>
+        <p style={{ fontSize: '25px' }}>{priceDollars(business.priceRange)}</p>
       </div>
     </div>
   );
