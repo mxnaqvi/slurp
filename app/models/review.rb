@@ -15,7 +15,7 @@ class Review < ApplicationRecord
     validates :rating, presence: true, inclusion: { in: (1..5) }
 
 
-    belongs_to :reviewer,
+    belongs_to :user,
         primary_key: :id,
         foreign_key: :user_id,
         class_name: :User

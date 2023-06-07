@@ -26,7 +26,7 @@ const BusinessShow = () => {
     return null;
   }
 
-  const filteredReviews = reviews.filter(review => review.businessId === businessId);
+  // const filteredReviews = reviews.filter(review => review.businessId === Number(businessId));
 
   const handleReviewForm = (event) => {
     event.preventDefault();
@@ -51,8 +51,8 @@ const BusinessShow = () => {
         <p>Hours: {JSON.stringify(business.hours)}</p>
 
         <div className='reviews-container'>
-          {/* <Reviews /> */}
-          {console.log(filteredReviews)}
+          <Reviews />
+          {/* {console.log(filteredReviews)} */}
         </div>
 
         <button onClick={handleReviewForm}>Write a Review</button> {/* Add the button with the onClick event */}

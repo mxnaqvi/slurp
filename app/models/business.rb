@@ -37,7 +37,7 @@ class Business < ApplicationRecord
     
     has_many :reviewers,
         through: :reviews,
-        source: :reviewer
+        source: :user
 
     def update_rating
         count = reviewers.count
