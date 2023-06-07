@@ -56,37 +56,65 @@ const BusinessShow = () => {
 
   const buttonText = hasReviewed ? "Update Review" : "Write a Review";
 
+  const formatHours = (hours) => {
+    const days = Object.keys(hours);
+    let formattedHours = [];
+  
+    days.forEach((day) => {
+      const timeRange = hours[day];
+      const formattedTimeRange = timeRange.replace(" - ", " – "); // Replace the dash with an en dash
+  
+      formattedHours.push(
+        <React.Fragment key={day}>
+          <strong>{day.charAt(0).toUpperCase() + day.slice(1)}:</strong> {formattedTimeRange}
+          <br />
+        </React.Fragment>
+      );
+    });
+  
+    return formattedHours;
+  };
+  
+
   return (
     <>
       <BusinessShowHeader />
-      <div>
-        <div className='business-show-container'>
-          <div className='business-show-map'>
-            this is the map
+      <div className='business-write-review'>
+        <button onClick={handleReviewForm}>{buttonText}</button>
+      </div>
+      <div className='business-show-container'>
+        <div className='business-left-side'>
+        <h1 className="business-show-location-header">Location & Hours</h1>
+          <div className='business-show-location-and-hours'>
+            <div className='business-show-location-left'>
+              <div className='business-show-map'>
+                this is the map
+              </div>
+              <div className='business-show-address'>
+                <p>{business.address}</p>
+                <p>{business.city}, {business.state} {business.zipCode}</p>
+              </div>
+            </div>
+            <div className='business-show-hours'>
+              <p>{formatHours(business.hours)}</p>
+            </div>
           </div>
-          <div className='business-show-address'>
-            <p>{business.address}</p>
-            <p>{business.city}, {business.state}</p>
-            <p> {business.zipCode}</p>
+          <div className='reviews-container'>
+            <Reviews />
           </div>
+        </div>
+        <div className='business-right-side'>
           <div className='business-show-phone'>
             <p>{business.phone}</p>
-          </div>
-          <div className='business-show-hours'>
-            <p>{JSON.stringify(business.hours)}</p>
           </div>
           <div className='business-show-contact'>
             Contact Me
           </div>
         </div>
-        <div className='reviews-container'>
-          <Reviews />
-        </div>
-
-       <button onClick={handleReviewForm}>{buttonText}</button>
       </div>
     </>
   );
 };
 
 export default BusinessShow;
+
