@@ -47,14 +47,17 @@ const BusinessShow = () => {
           review.userId === currentUser.id && review.businessId === business.id
       );
       if (currentUserReview) {
-        history.push(
-          `/businesses/${businessId}/update-review/${currentUserReview.id}`
-        );
+        history.push(`/businesses/${businessId}/update-review/${currentUserReview.id}`);
       }
     } else {
-      history.push(`/businesses/${businessId}/write-a-review`);
+      if (currentUser) {
+        history.push(`/businesses/${businessId}/write-a-review`);
+      } else {
+        history.push('/login'); // Redirect to login page if user is not logged in
+      }
     }
   };
+  
 
   const buttonText = hasReviewed ? "Update Review" : "Write a Review";
 

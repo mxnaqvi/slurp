@@ -6,14 +6,14 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.firs
 puts 'Destroying Tables...'
-  Review.destroy_all
-  Business.destroy_all
-  User.destroy_all
+Review.destroy_all
+Business.destroy_all
+User.destroy_all
 
-  puts "Resetting primary keys..."
-    ApplicationRecord.connection.reset_pk_sequence!('users')
-    ApplicationRecord.connection.reset_pk_sequence!('businesses')
-    ApplicationRecord.connection.reset_pk_sequence!('reviews')
+puts "Resetting primary keys..."
+ApplicationRecord.connection.reset_pk_sequence!('users')
+ApplicationRecord.connection.reset_pk_sequence!('businesses')
+ApplicationRecord.connection.reset_pk_sequence!('reviews')
 
 
 User.create!([ email: "caffeine@addict.com", fname: "Caffeine", lname: "Addict", password: "password", zipcode: "11218" ])
@@ -136,3 +136,4 @@ longitude: -73.98822,
 hours: {"Monday"=>"7:00 am - 8:00 pm", "Tuesday"=>"7:00 am - 8:00 pm", "Wednesday"=>"7:00 am - 8:00 pm", "Thursday"=>"7:00 am - 8:00 pm", "Friday"=>"7:00 am - 11:00 pm", "Saturday"=>"7:00 am - 11:00 pm", "Sunday"=>"7:00 am - 8:00 pm"}
 ])
 
+Review.create!([ body: "This place is great!", rating: 5, user_id: 1, business_id: 2 ])
