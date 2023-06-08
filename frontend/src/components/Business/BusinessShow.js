@@ -27,8 +27,10 @@ const BusinessShow = () => {
   }, [dispatch, businessId]);
 
   useEffect(() => {
-    if (business && reviews) {
-      const currentUserReview = reviews.find(review => review.userId === currentUser.id && review.businessId === business.id);
+    if (business && reviews && currentUser) {
+      const currentUserReview = reviews.find(
+        review => review.userId === currentUser.id && review.businessId === business.id
+      );
       setHasReviewed(!!currentUserReview);
     }
   }, [business, reviews, currentUser]);
