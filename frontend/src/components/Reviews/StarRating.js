@@ -1,7 +1,7 @@
 import React from 'react';
 import './StarRating.css';
 
-const CoffeeRating = ({ rating, setRating }) => {
+const StarRating = ({ rating, setRating }) => {
   const handleClick = (value) => {
     setRating(value);
   };
@@ -25,4 +25,4 @@ const CoffeeRating = ({ rating, setRating }) => {
   );
 };
 
-export default CoffeeRating;
+export default StarRating;

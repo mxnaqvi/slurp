@@ -44,8 +44,14 @@
     background-color: #33200e;
   }
   
-  /* Optional: Center the header */
   .review-form-header {
     text-align: center;
+    font-size: 20px;
+    font-weight: 800;
   }
   
+  .error-message {
+    color: red;
+    font-size: 17px;
+    margin-top: 5px;
+  }
