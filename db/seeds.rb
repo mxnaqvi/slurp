@@ -40,8 +40,8 @@ zip_code: "11215",
 phone_number: "4073513333", 
 price_range: 2.0, 
 rating: 0, 
-latitude: 28.5383, 
-longitude: -81.3792, 
+latitude: 40.674246, 
+longitude: -73.975202, 
 hours: {"Monday"=>"7:00 am - 7:00 pm", "Tuesday"=>"7:00 am - 7:00 pm", "Wednesday"=>"7:00 am - 7:00 pm", "Thursday"=>"7:00 am - 7:00 pm", "Friday"=>"7:00 am - 11:00 pm", "Saturday"=>"7:00 am - 11:00 pm", "Sunday"=>"7:00 am - 7:00 pm"}
 ])
 
@@ -53,8 +53,8 @@ zip_code: "11226",
 phone_number: "4073513333", 
 price_range: 3.0, 
 rating: 0, 
-latitude: 28.5383, 
-longitude: -81.3792, 
+latitude: 40.64184, 
+longitude: -73.96338, 
 hours: {"Monday"=>"7:00 am - 8:00 pm", "Tuesday"=>"7:00 am - 8:00 pm", "Wednesday"=>"7:00 am - 8:00 pm", "Thursday"=>"7:00 am - 8:00 pm", "Friday"=>"7:00 am - 11:00 pm", "Saturday"=>"7:00 am - 11:00 pm", "Sunday"=>"7:00 am - 8:00 pm"}
 ])
 
@@ -68,6 +68,19 @@ price_range: 4.0,
 rating: 0, 
 latitude: 40.738771, 
 longitude: -73.988459, 
+hours: {"Monday"=>"7:00 am - 8:00 pm", "Tuesday"=>"7:00 am - 8:00 pm", "Wednesday"=>"7:00 am - 8:00 pm", "Thursday"=>"7:00 am - 8:00 pm", "Friday"=>"7:00 am - 11:00 pm", "Saturday"=>"7:00 am - 11:00 pm", "Sunday"=>"7:00 am - 8:00 pm"}
+])
+
+Business.create!([ name: "Blue Bottle Coffee", 
+address: "203 7th Ave", 
+city: "Brooklyn", 
+state: "NY", 
+zip_code: "11215", 
+phone_number: "4073513333", 
+price_range: 4.0, 
+rating: 0, 
+latitude: 40.670647, 
+longitude: -73.978283, 
 hours: {"Monday"=>"7:00 am - 8:00 pm", "Tuesday"=>"7:00 am - 8:00 pm", "Wednesday"=>"7:00 am - 8:00 pm", "Thursday"=>"7:00 am - 8:00 pm", "Friday"=>"7:00 am - 11:00 pm", "Saturday"=>"7:00 am - 11:00 pm", "Sunday"=>"7:00 am - 8:00 pm"}
 ])
 

@@ -34,22 +34,35 @@
 }
 
 .github-link,
-.linkedin-link {
+.linkedin-link,
+.wellfound-link {
   margin-left: 15px;
 }
 
 .github-link a,
-.linkedin-link a {
+.linkedin-link a,
+.wellfound-link a {
   color: #000000;
   text-decoration: none;
 }
 
 .github-link a:hover,
-.linkedin-link a:hover {
-  text-decoration: underline;
+.linkedin-link a:hover,
+.wellfound-link a:hover {
+  filter: invert(100%);
+}
+
+.github-link a img,
+.linkedin-link a img,
+.wellfound-link a img {
+  width: 30px; 
+  height: 30px;
+  transition: filter 0.3s ease; 
 }
 
 .nav-right {
+  display: flex;
+  align-items: center; /* Align items vertically */
   margin-left: auto;
 }
 
@@ -88,16 +101,11 @@
   height: auto; 
 }
 
-.github-link a img,
-.linkedin-link a img {
-  width: 26px; 
-  height: 26px; 
-}
-
 .carousel-container {
   margin-top: 1px;
   z-index: 5; 
 }
+
 .navigation-container {
   position: relative;
 }
@@ -150,3 +158,5 @@
 .cafes:hover {
   background-color: #33200e;
 }
+
+

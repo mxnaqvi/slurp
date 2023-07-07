@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchBusinesses, getBusinesses } from '../../store/businessReducer';
 import BusinessIndexItem from './BusinessIndexItem';
 import './BusinessIndex.css';
+import StreetMap from '../Map/StreetMap';
 
 const BusinessIndex = () => {
   const dispatch = useDispatch();
@@ -25,9 +26,8 @@ const BusinessIndex = () => {
           </div>
         ))}
       </div>
-      <div className="business-map">
-        {/* Add the map component or placeholder here */}
-        <p>this is the map just trust me its here</p>
+      <div className="google-map">
+        <StreetMap />
       </div>
     </div>
   );

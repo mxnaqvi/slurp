@@ -6,6 +6,7 @@ import './Navigation.css';
 import homeIcon from '../../assets/homeicon.png';
 import githubIcon from '../../assets/github-mark.png';
 import linkedinIcon from '../../assets/LI-In-Bug.png';
+import wellfoundIcon from '../../assets/wellfound-symbol-black.png';
 import Carousel from '../SplashPage/Carousel';
 
 function Navigation() {
@@ -68,11 +69,22 @@ function Navigation() {
           {shouldDisplayLinkedInLink && (
             <li className="linkedin-link">
               <a
-                href="https://www.linkedin.com/in/your-linkedin-profile"
+                href="https://www.linkedin.com/in/mohammadalinaqvi"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <img src={linkedinIcon} alt="LinkedIn" />
+              </a>
+            </li>
+          )}
+          {shouldDisplayLinkedInLink && (
+            <li className="wellfound-link">
+              <a
+                href="https://wellfound.com/u/mohammad-naqvi-6"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src={wellfoundIcon} alt="LinkedIn" />
               </a>
             </li>
           )}

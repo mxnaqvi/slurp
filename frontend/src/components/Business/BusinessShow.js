@@ -4,6 +4,7 @@ import { useParams, useHistory } from 'react-router-dom';
 import { fetchBusiness, getBusiness } from '../../store/businessReducer';
 import BusinessShowHeader from './BusinessShowHeader';
 import Reviews from '../Reviews/ReviewIndex';
+import BusinessMap from '../Map/BusinessMap';
 import { fetchReviews, getReviews } from '../../store/reviewReducer';
 import './BusinessShow.css';
 
@@ -15,7 +16,7 @@ const BusinessShow = () => {
   const reviews = useSelector(getReviews);
   const [hasReviewed, setHasReviewed] = useState(false);
 
-  // Assuming you have a way to access the currentUser in your application state
+
   const currentUser = useSelector(state => state.session.user);
 
   useEffect(() => {
@@ -53,7 +54,7 @@ const BusinessShow = () => {
       if (currentUser) {
         history.push(`/businesses/${businessId}/write-a-review`);
       } else {
-        history.push('/login'); // Redirect to login page if user is not logged in
+        history.push('/login'); 
       }
     }
   };
@@ -67,7 +68,7 @@ const BusinessShow = () => {
 
     days.forEach((day) => {
       const timeRange = hours[day];
-      const formattedTimeRange = timeRange.replace(" - ", " – "); // Replace the dash with an en dash
+      const formattedTimeRange = timeRange.replace(" - ", " – ");
 
       formattedHours.push(
         <React.Fragment key={day}>
@@ -94,7 +95,7 @@ const BusinessShow = () => {
           <div className='business-show-location-and-hours'>
             <div className='business-show-location-left'>
               <div className='business-show-map'>
-                this is the map
+                <BusinessMap business={business} />
               </div>
               <div className='business-show-address'>
                 <p>{business.address}</p>

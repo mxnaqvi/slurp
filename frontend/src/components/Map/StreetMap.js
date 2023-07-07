@@ -1,13 +1,15 @@
-import React, { useMemo, useState } from "react";
+import React, { useMemo } from "react";
 import { useSelector } from "react-redux";
-import { GoogleMap, useLoadScript, Marker, InfoWindow } from "@react-google-maps/api";
+import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
 import { useHistory } from "react-router-dom";
+import { getBusinesses } from "../../store/businessReducer";
 import "./style.css";
 
 export default function StreetMap() {
-  
-  const { isLoaded, url, loadError } = useLoadScript({
-    googleMapsApiKey:  process.env.REACT_APP_MOH_MAPS_API_KEY,
+  const businesses = useSelector(getBusinesses);
+
+  const { isLoaded, loadError } = useLoadScript({
+    googleMapsApiKey: 'no',
   });
 
   if (!isLoaded) return <div>Loading...</div>;
@@ -15,16 +17,14 @@ export default function StreetMap() {
 
   return (
     <div>
-      <Map />
+      <Map businesses={businesses} />
     </div>
   );
 }
 
-function Map() {
-  const center = useMemo(() => ({ lat: 40.734344, lng: -73.922479 }), []);
-  const businesses = useSelector((state) => state.businesses);
+function Map({ businesses }) {
+  const center = useMemo(() => ({ lat: 40.671450, lng: -73.963673 }), []);
   const history = useHistory();
-  const [selectedMarker, setSelectedMarker] = useState(null);
 
   const markerPositions = useMemo(
     () =>
@@ -32,21 +32,14 @@ function Map() {
         ? businesses.map((business) => ({
             lat: parseFloat(business.latitude),
             lng: parseFloat(business.longitude),
+            id: business.id,
           }))
         : [],
     [businesses]
   );
 
-  const handleMarkerClick = (eventId) => {
-    history.push(`/events/${eventId}`);
-  };
-
-  const handleMarkerHover = (marker) => {
-    setSelectedMarker(marker);
-  };
-
-  const handleMarkerHoverLeave = () => {
-    setSelectedMarker(null);
+  const handleMarkerClick = (businessId) => {
+    history.push(`/businesses/${businessId}`);
   };
 
   return (
@@ -56,24 +49,8 @@ function Map() {
           <Marker
             key={index}
             position={position}
-            icon={{
-              url: require("./mapmarkers.png"),
-              scaledSize: new window.google.maps.Size(80, 50),
-            }}
-            onMouseOver={() => handleMarkerHover(businesses[index])}
-            onMouseOut={handleMarkerHoverLeave}
-            onClick={() => handleMarkerClick(businesses[index]._id)}
-          >
-            {selectedMarker === businesses[index] && (
-              <InfoWindow
-                options={{
-                  disableCloseButton: true,
-                }}
-              >
-                <div>{businesses[index].location.mainStreet}</div>
-              </InfoWindow>
-            )}
-          </Marker>
+            onClick={() => handleMarkerClick(position.id)}
+          />
         ))}
       </GoogleMap>
     </div>

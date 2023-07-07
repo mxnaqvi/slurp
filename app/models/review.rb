@@ -25,7 +25,4 @@ class Review < ApplicationRecord
         foreign_key: :business_id,
         class_name: :Business
     
-    def update_rating
-        business.update_rating
-    end
 end

@@ -13,7 +13,9 @@ const RecentActivity = () => {
   }, [dispatch]);
 
   if (!reviews || Object.keys(reviews).length === 0) {
-    return <div>No recent reviews</div>;
+    return <div className='recent-activity'>
+      <h1 className='recent-activity-header'>No Recent Activity :( </h1>
+    </div>;
   }
 
   const recentReviews = Object.values(reviews)

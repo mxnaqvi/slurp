@@ -29,6 +29,8 @@ const Footer = () => {
                 <ul id="footer-col">
                     <h2 id="footer-title">Personal Links</h2>
                     <li><a id="per-link" href="https://github.com/mxnaqvi/">GitHub</a></li>
+                    <li><a id="per-link" href="https://www.linkedin.com/in/mohammadalinaqvi/">LinkedIn</a></li>
+                    <li><a id="per-link" href="https://wellfound.com/u/mohammad-naqvi-6">Wellfound</a></li>
                 </ul>
 
             </div>
