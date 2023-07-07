@@ -8,9 +8,10 @@ import githubIcon from '../../assets/github-mark.png';
 import linkedinIcon from '../../assets/LI-In-Bug.png';
 import wellfoundIcon from '../../assets/wellfound-symbol-black.png';
 import Carousel from '../SplashPage/Carousel';
+import SearchBar from './SearchBar'; // Import the SearchBar component
 
 function Navigation() {
-  const sessionUser = useSelector(state => state.session.user);
+  const sessionUser = useSelector((state) => state.session.user);
   const location = useLocation();
 
   let sessionLinks;
@@ -34,9 +35,7 @@ function Navigation() {
   }
 
   const shouldDisplayCarousel = location.pathname === '/';
-  const shouldDisplaySearchBar = (location.pathname !== '/login' && location.pathname !== '/signup');
-  const shouldDisplayGithubLink = (location.pathname !== '/login' && location.pathname !== '/signup');
-  const shouldDisplayLinkedInLink = (location.pathname !== '/login' && location.pathname !== '/signup');
+  const shouldDisplayPersonalLink = (location.pathname !== '/login' && location.pathname !== '/signup');
   const shouldDisplayCafeButton = (location.pathname === '/');
 
   return (
@@ -49,13 +48,9 @@ function Navigation() {
             </NavLink>
           </li>
         </ul>
-        {shouldDisplaySearchBar && (
-          <div className="search-bar">
-            <input type="text" placeholder="Search" />
-          </div>
-        )}
+        <SearchBar /> {/* Include the SearchBar component here */}
         <ul className="nav-links">
-          {shouldDisplayGithubLink && (
+          {shouldDisplayPersonalLink && (
             <li className="github-link">
               <a
                 href="https://github.com/mxnaqvi"
@@ -66,7 +61,7 @@ function Navigation() {
               </a>
             </li>
           )}
-          {shouldDisplayLinkedInLink && (
+          {shouldDisplayPersonalLink && (
             <li className="linkedin-link">
               <a
                 href="https://www.linkedin.com/in/mohammadalinaqvi"
@@ -77,7 +72,7 @@ function Navigation() {
               </a>
             </li>
           )}
-          {shouldDisplayLinkedInLink && (
+          {shouldDisplayPersonalLink && (
             <li className="wellfound-link">
               <a
                 href="https://wellfound.com/u/mohammad-naqvi-6"
@@ -91,13 +86,14 @@ function Navigation() {
           <li className="nav-right">{sessionLinks}</li>
         </ul>
       </nav>
-      {shouldDisplayCafeButton && (<div className="button-text-container">
-        <p className="button-text">Start Slurpin'</p>
-        <NavLink className="cafes" to="/businesses">
-          Find Cafes
-        </NavLink>
-      </div>
-    )}
+      {shouldDisplayCafeButton && (
+        <div className="button-text-container">
+          <p className="button-text">Start Slurpin'</p>
+          <NavLink className="cafes" to="/businesses">
+            Find Cafes
+          </NavLink>
+        </div>
+      )}
       {shouldDisplayCarousel && (
         <div className="carousel-container">
           <Carousel />

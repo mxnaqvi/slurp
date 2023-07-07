@@ -9,7 +9,7 @@ export default function StreetMap() {
   const businesses = useSelector(getBusinesses);
 
   const { isLoaded, loadError } = useLoadScript({
-    googleMapsApiKey: 'no',
+    googleMapsApiKey: "nope",
   });
 
   if (!isLoaded) return <div>Loading...</div>;
