@@ -3,13 +3,12 @@
   justify-content: center;
   align-items: center;
   margin-top: 20px;
-  margin-left: 300px;
+  margin-left: 150px;
 }
 
 .business-left-side {
-  width: 826px;
+  width: 800px;
   height: 1063px;
-  padding-right: 20px;
 }
 
 .business-right-side {
@@ -28,7 +27,7 @@
 .business-show-map {
   width: 300px;
   height: 150px;
-  background-color: #ddd; /* Placeholder color */
+  background-color: #ddd; 
 }
 
 .business-show-address {
@@ -57,14 +56,62 @@
   top: 20px;
   margin-left: 20px;
   padding: 20px;
-  width: 360px;
-  height: 1063px;
+  width: auto;
+  height: 500px;
   background-color: #fff;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
-.business-show-contact p {
-  margin: 0;
+.business-show-portfolio {
+  position: sticky;
+  top: 20px;
+  margin-left: 20px;
+  padding: 20px;
+  width: auto;
+  height: 200px;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+.business-show-contact-header {
+  font-weight: 800;
+  font-size: 20px;
+}
+
+.business-show-links {
+  display: flex;
+  flex-direction: column;
+  line-height: 150%;
+  font-size: 18px;
+  font-weight: 500;
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+.business-show-links a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  border-bottom: 2px solid #ccc;
+  padding: 5px;
+  color: rgb(27, 107, 186);
+}
+
+.business-show-links a img {
+  width: 18px;
+  height: 18px;
+  margin-right: 5px;
+}
+
+.business-show-links a span {
+  flex-grow: 1;
+}
+
+.business-show-links a:hover {
+  background-color: #f5f5f5;
+}
+
+.business-show-links a:hover img {
+  filter: brightness(0.8);
 }
 
 .business-show-header {
@@ -78,7 +125,7 @@
 }
 
 .business-show-location-left {
-    margin-right: 20px; /* Add margin to create spacing between divs */
+    margin-right: 20px; 
 }
   
 .business-show-hours {

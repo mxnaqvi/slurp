@@ -9,7 +9,7 @@ export default function StreetMap() {
   const businesses = useSelector(getBusinesses);
 
   const { isLoaded, loadError } = useLoadScript({
-    googleMapsApiKey: "nope",
+    googleMapsApiKey: process.env.REACT_APP_MOH_MAPS_API_KEY,
   });
 
   if (!isLoaded) return <div>Loading...</div>;

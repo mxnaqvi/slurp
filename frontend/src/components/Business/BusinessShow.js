@@ -5,6 +5,9 @@ import { fetchBusiness, getBusiness } from '../../store/businessReducer';
 import BusinessShowHeader from './BusinessShowHeader';
 import Reviews from '../Reviews/ReviewIndex';
 import BusinessMap from '../Map/BusinessMap';
+import githubIcon from '../../assets/github-mark.png';
+import linkedinIcon from '../../assets/LI-In-Bug.png';
+import wellfoundIcon from '../../assets/wellfound-symbol-black.png';
 import { fetchReviews, getReviews } from '../../store/reviewReducer';
 import './BusinessShow.css';
 
@@ -60,7 +63,7 @@ const BusinessShow = () => {
   };
   
 
-  const buttonText = hasReviewed ? "Update Review" : "Write a Review";
+  const buttonText = hasReviewed ? "★ Update Review" : "☆ Write a Review";
 
   const formatHours = (hours) => {
     const days = Object.keys(hours);
@@ -113,11 +116,30 @@ const BusinessShow = () => {
           </div>
         </div>
         <div className='business-right-side'>
-          <div className='business-show-phone'>
-            <p>{business.phone}</p>
-          </div>
+        {/* <div className='business-show-portfolio'>
+            <div className='business-show-contact-header'> 
+            Portfolio 
+            </div>
+            
+          </div> */}
           <div className='business-show-contact'>
-            Contact Me
+            <div className='business-show-contact-header'> 
+            Contact Me 
+            </div>
+            <div className='business-show-links'>
+            <a id="contact-me" href="https://github.com/mxnaqvi/">
+                <img src={githubIcon} alt="GitHub" className="icon" />
+                GitHub
+              </a>
+              <a id="contact-me" href="https://www.linkedin.com/in/mohammadalinaqvi/">
+                <img src={linkedinIcon} alt="LinkedIn" className="icon" />
+                LinkedIn
+              </a>
+              <a id="contact-me" href="https://wellfound.com/u/mohammad-naqvi-6">
+                <img src={wellfoundIcon} alt="Wellfound" className="icon" />
+                Wellfound
+              </a>
+            </div>
           </div>
         </div>
       </div>

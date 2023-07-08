@@ -7,7 +7,7 @@ import "./BusinessMap.css";
 
 export default function BusinessMap({ business }) {
   const { isLoaded, loadError } = useLoadScript({
-    googleMapsApiKey: "nope",
+    googleMapsApiKey: process.env.REACT_APP_MOH_MAPS_API_KEY,
   });
 
   const center = useMemo(() => ({
