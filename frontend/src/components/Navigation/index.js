@@ -21,7 +21,7 @@ function Navigation() {
     sessionLinks = (
       <>
         {(location.pathname !== '/login' && location.pathname !== '/signup') && (
-          <NavLink className="login" to="/login">
+          <NavLink className={`login${location.pathname === '/' ? ' homepage' : ''}`} to="/login">
             Log In
           </NavLink>
         )}
@@ -48,7 +48,7 @@ function Navigation() {
             </NavLink>
           </li>
         </ul>
-        <SearchBar /> {/* Include the SearchBar component here */}
+        <SearchBar /> 
         <ul className="nav-links">
           {shouldDisplayPersonalLink && (
             <li className="github-link">

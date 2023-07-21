@@ -18,6 +18,14 @@ ApplicationRecord.connection.reset_pk_sequence!('reviews')
 
 User.create!([ email: "caffeine@addict.com", fname: "Caffeine", lname: "Addict", password: "password", zipcode: "11218" ])
 
+# Assuming you already have the first user created
+User.create!([
+  { email: "user2@example.com", fname: "John", lname: "Doe", password: "password123", zipcode: "12345" },
+  { email: "user3@example.com", fname: "Jane", lname: "Smith", password: "securepassword", zipcode: "67890" },
+  { email: "user4@example.com", fname: "Michael", lname: "Johnson", password: "mysecretpass", zipcode: "54321" }
+])
+
+
 Business.create!([
 name: "Steeplechase Coffee", 
 address: "3013 Fort Hamilton Pkwy", 
@@ -175,4 +183,200 @@ longitude: -73.905547,
 hours: {"Monday"=>"7:00 am - 8:00 pm", "Tuesday"=>"7:00 am - 8:00 pm", "Wednesday"=>"7:00 am - 8:00 pm", "Thursday"=>"7:00 am - 8:00 pm", "Friday"=>"7:00 am - 11:00 pm", "Saturday"=>"7:00 am - 11:00 pm", "Sunday"=>"7:00 am - 8:00 pm"}
 ])
 
+Business.create!([ name: "Outro NYC",
+address: "816 Broadway",
+city: "New York",
+state: "NY",
+zip_code: "10003",
+phone_number: "2129946771",
+price_range: 3.0,
+rating: 0,
+latitude: 40.732968,
+longitude: -73.991019,
+hours: {"Monday"=>"7:00 am - 8:00 pm", "Tuesday"=>"7:00 am - 8:00 pm", "Wednesday"=>"7:00 am - 8:00 pm", "Thursday"=>"7:00 am - 8:00 pm", "Friday"=>"7:00 am - 11:00 pm", "Saturday"=>"7:00 am - 11:00 pm", "Sunday"=>"7:00 am - 8:00 pm"}
+])
+
+Business.create!(
+  name: "Morningside Cafe",
+  address: "789 Amsterdam Ave",
+  city: "New York",
+  state: "NY",
+  zip_code: "10025",
+  phone_number: "2125556789",
+  price_range: 2.5,
+  rating: 0,
+  latitude: 40.798697 + rand(-0.01..0.01),
+  longitude: -73.968570 + rand(-0.01..0.01),
+  hours: {
+    "Monday" => "7:00 am - 6:00 pm",
+    "Tuesday" => "7:00 am - 6:00 pm",
+    "Wednesday" => "7:00 am - 6:00 pm",
+    "Thursday" => "7:00 am - 6:00 pm",
+    "Friday" => "7:00 am - 8:00 pm",
+    "Saturday" => "8:00 am - 4:00 pm",
+    "Sunday" => "8:00 am - 4:00 pm"
+  }
+)
+
+Business.create!(
+  name: "Java Junction",
+  address: "543 Lexington Ave",
+  city: "New York",
+  state: "NY",
+  zip_code: "10022",
+  phone_number: "2125559876",
+  price_range: 0,
+  rating: 4.8,
+  latitude: 40.757424 + rand(-0.01..0.01),
+  longitude: -73.972086 + rand(-0.01..0.01),
+  hours: {
+    "Monday" => "6:30 am - 5:30 pm",
+    "Tuesday" => "6:30 am - 5:30 pm",
+    "Wednesday" => "6:30 am - 5:30 pm",
+    "Thursday" => "6:30 am - 5:30 pm",
+    "Friday" => "6:30 am - 6:30 pm",
+    "Saturday" => "7:00 am - 4:00 pm",
+    "Sunday" => "7:00 am - 4:00 pm"
+  }
+)
+
+Business.create!(
+  name: "Harlem Roastery",
+  address: "200 Lenox Ave",
+  city: "New York",
+  state: "NY",
+  zip_code: "10027",
+  phone_number: "2125552222",
+  price_range: 2.0,
+  rating: 0,
+  latitude: 40.804196 + rand(-0.01..0.01),
+  longitude: -73.949595 + rand(-0.01..0.01),
+  hours: {
+    "Monday" => "8:00 am - 4:00 pm",
+    "Tuesday" => "8:00 am - 4:00 pm",
+    "Wednesday" => "8:00 am - 4:00 pm",
+    "Thursday" => "8:00 am - 4:00 pm",
+    "Friday" => "8:00 am - 6:00 pm",
+    "Saturday" => "9:00 am - 3:00 pm",
+    "Sunday" => "9:00 am - 3:00 pm"
+  }
+)
+
+Business.create!(
+  name: "Brooklyn Beans",
+  address: "456 Smith St",
+  city: "Brooklyn",
+  state: "NY",
+  zip_code: "11231",
+  phone_number: "7185551111",
+  price_range: 1.5,
+  rating: 0,
+  latitude: 40.678230 + rand(-0.01..0.01),
+  longitude: -73.994222 + rand(-0.01..0.01),
+  hours: {
+    "Monday" => "7:00 am - 5:00 pm",
+    "Tuesday" => "7:00 am - 5:00 pm",
+    "Wednesday" => "7:00 am - 5:00 pm",
+    "Thursday" => "7:00 am - 5:00 pm",
+    "Friday" => "7:00 am - 7:00 pm",
+    "Saturday" => "8:00 am - 3:00 pm",
+    "Sunday" => "8:00 am - 3:00 pm"
+  }
+)
+
+Business.create!(
+  name: "Caffeine Corner",
+  address: "789 Broadway",
+  city: "New York",
+  state: "NY",
+  zip_code: "10003",
+  phone_number: "2125553333",
+  price_range: 2.5,
+  rating: 0,
+  latitude: 40.730284 + rand(-0.01..0.01),
+  longitude: -73.993729 + rand(-0.01..0.01),
+  hours: {
+    "Monday" => "6:30 am - 6:00 pm",
+    "Tuesday" => "6:30 am - 6:00 pm",
+    "Wednesday" => "6:30 am - 6:00 pm",
+    "Thursday" => "6:30 am - 6:00 pm",
+    "Friday" => "6:30 am - 8:00 pm",
+    "Saturday" => "7:00 am - 4:00 pm",
+    "Sunday" => "7:00 am - 4:00 pm"
+  }
+)
+
+Business.create!(
+  name: "Uptown Brews",
+  address: "123 1st Ave",
+  city: "New York",
+  state: "NY",
+  zip_code: "10009",
+  phone_number: "2125554444",
+  price_range: 2.0,
+  rating: 0,
+  latitude: 40.727719 + rand(-0.01..0.01),
+  longitude: -73.986294 + rand(-0.01..0.01),
+  hours: {
+    "Monday" => "7:00 am - 5:00 pm",
+    "Tuesday" => "7:00 am - 5:00 pm",
+    "Wednesday" => "7:00 am - 5:00 pm",
+    "Thursday" => "7:00 am - 5:00 pm",
+    "Friday" => "7:00 am - 6:00 pm",
+    "Saturday" => "8:00 am - 4:00 pm",
+    "Sunday" => "8:00 am - 4:00 pm"
+  }
+)
+
+Business.create!(
+  name: "Greenwich Grind",
+  address: "789 Greenwich St",
+  city: "New York",
+  state: "NY",
+  zip_code: "10014",
+  phone_number: "2125555555",
+  price_range: 0,
+  rating: 4.4,
+  latitude: 40.733496 + rand(-0.01..0.01),
+  longitude: -74.005912 + rand(-0.01..0.01),
+  hours: {
+    "Monday" => "8:00 am - 5:00 pm",
+    "Tuesday" => "8:00 am - 5:00 pm",
+    "Wednesday" => "8:00 am - 5:00 pm",
+    "Thursday" => "8:00 am - 5:00 pm",
+    "Friday" => "8:00 am - 7:00 pm",
+    "Saturday" => "9:00 am - 3:00 pm",
+    "Sunday" => "9:00 am - 3:00 pm"
+  }
+)
+
+
 Review.create!([ body: "This place is great!", rating: 5, user_id: 1, business_id: 2 ])
+
+Review.create!(
+  body: "This place is awesome! The coffee is top-notch.",
+  rating: 4,
+  user_id: 1,
+  business_id: 3
+)
+
+Review.create!(
+  body: "I love the cozy atmosphere and friendly staff.",
+  rating: 5,
+  user_id: 1,
+  business_id: 6
+)
+
+Review.create!(
+  body: "Great place to work remotely. Good Wi-Fi and ample seating.",
+  rating: 4,
+  user_id: 3,
+  business_id: 8
+)
+
+Review.create!(
+  body: "The best coffee in the area! A must-visit for coffee enthusiasts.",
+  rating: 5,
+  user_id: 2,
+  business_id: 12
+)

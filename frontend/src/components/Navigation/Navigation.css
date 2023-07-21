@@ -80,6 +80,10 @@
   background-color: #888888;
 }
 
+.login:not(.homepage) {
+  background-color: #724E2C;
+}
+
 .signup {
   margin-right: 10px;
   background-color: #724E2C;

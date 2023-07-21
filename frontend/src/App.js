@@ -35,7 +35,6 @@ function App() {
         </Switch>
         {isHomePage && <RecentActivity />}
       <Footer />
-      
     </>
   );
 }
