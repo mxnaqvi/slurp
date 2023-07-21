@@ -24,6 +24,7 @@ const Footer = () => {
                     <h2 id="footer-title">Other</h2>
                     <li>Google Maps API</li>
                     <li>AWS S3(Coming Soon)</li>
+                    <li>Unsplash</li>
                 </ul>
 
                 <ul id="footer-col">
