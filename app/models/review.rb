@@ -13,7 +13,9 @@
 class Review < ApplicationRecord
     validates :body, presence: true, length: { minimum: 10 }
     validates :rating, presence: true, inclusion: { in: (1..5) }
-
+    
+  after_create :update_business_rating
+  after_update :update_business_rating
 
     belongs_to :user,
         primary_key: :id,
@@ -24,5 +26,11 @@ class Review < ApplicationRecord
         primary_key: :id,
         foreign_key: :business_id,
         class_name: :Business
+    
+        private
+
+        def update_business_rating
+          business.update_rating
+        end
     
 end

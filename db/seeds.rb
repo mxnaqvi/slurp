@@ -22,7 +22,13 @@ User.create!([ email: "caffeine@addict.com", fname: "Caffeine", lname: "Addict",
 User.create!([
   { email: "user2@example.com", fname: "John", lname: "Doe", password: "password123", zipcode: "12345" },
   { email: "user3@example.com", fname: "Jane", lname: "Smith", password: "securepassword", zipcode: "67890" },
-  { email: "user4@example.com", fname: "Michael", lname: "Johnson", password: "mysecretpass", zipcode: "54321" }
+  { email: "user4@example.com", fname: "Michael", lname: "Johnson", password: "mysecretpass", zipcode: "54321" },
+  { email: "espresso_lover@example.com", fname: "Espresso", lname: "Lover", password: "coffee123", zipcode: "11234" },
+  { email: "cappuccino_addict@example.com", fname: "Cappuccino", lname: "Addict", password: "mocha456", zipcode: "10001" },
+  { email: "latte_artisan@example.com", fname: "Latte", lname: "Artisan", password: "barista789", zipcode: "20002" },
+  { email: "americano_aficionado@example.com", fname: "Americano", lname: "Aficionado", password: "espresso2023", zipcode: "30303" },
+  { email: "cold_brew_enthusiast@example.com", fname: "Cold", lname: "Brew Enthusiast", password: "icedcoffee345", zipcode: "90001" },
+  { email: "mocha_master@example.com", fname: "Mocha", lname: "Master", password: "frenchpress567", zipcode: "60007" }
 ])
 
 
@@ -351,32 +357,45 @@ Business.create!(
 )
 
 
-Review.create!([ body: "This place is great!", rating: 5, user_id: 1, business_id: 2 ])
 
-Review.create!(
-  body: "This place is awesome! The coffee is top-notch.",
-  rating: 4,
-  user_id: 1,
-  business_id: 3
-)
+
+user_ids = [ 4, 5, 6, 7, 8, 9, 10]
+
+
+review_template = "This place is great! I love the coffee here, and the ambiance is perfect for getting work done or just relaxing with a book."
+
+
+business_ids = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+
+
+reviews = business_ids.map.with_index do |business_id, index|
+  Review.create!(
+    body: review_template,
+    rating: rand(3..5), 
+    user_id: user_ids[index % user_ids.length],
+    business_id: business_id
+  )
+end
+
+puts "#{reviews.size} reviews created!"
 
 Review.create!(
   body: "I love the cozy atmosphere and friendly staff.",
   rating: 5,
   user_id: 1,
-  business_id: 6
+  business_id: 1
 )
 
 Review.create!(
   body: "Great place to work remotely. Good Wi-Fi and ample seating.",
   rating: 4,
   user_id: 3,
-  business_id: 8
+  business_id: 2
 )
 
 Review.create!(
   body: "The best coffee in the area! A must-visit for coffee enthusiasts.",
   rating: 5,
   user_id: 2,
-  business_id: 12
+  business_id: 5
 )
