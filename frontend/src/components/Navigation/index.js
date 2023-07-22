@@ -48,7 +48,9 @@ function Navigation() {
             </NavLink>
           </li>
         </ul>
+        {shouldDisplayPersonalLink && (
         <SearchBar /> 
+        )}
         <ul className="nav-links">
           {shouldDisplayPersonalLink && (
             <li className="github-link">
